@@ -1,0 +1,84 @@
+/*INDEX*/
+.barra{
+    background-color: #1D3557;
+}
+
+.navbar .navbar-link {
+    color: white !important;
+}
+
+a:hover{
+    background-color: #4566ac !important;
+    font-weight: bold;
+    color: white !important;
+    border-radius: 20px;
+}
+
+.cards {
+    margin-top: 20px;
+    border: none;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    background-color: #F1FAEE;
+    padding: 10px;
+}
+
+.card-hover:hover{
+    transform: scale(1.02);
+    transition: transform 0.2s ease;
+}
+.footer{
+    background-color: #1D3557;
+    height: 80px;
+    color: white;
+    text-align: center;
+    margin-top: 35px;
+    width: 100%;
+    font-size: large;
+   
+}
+
+/*LOGIN / REGISTER*/
+.login{
+    background: #1D3557;
+    padding: 40px;
+    border-radius: 20px;
+    margin-top: 100px;
+    margin-bottom: 80px;
+    color: white;
+    font-weight: bold;
+}
+.login input{
+    width: 85%;
+    border-radius: 15px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.login button{
+    width: 50%;
+    border-radius: 15px;
+    margin-left: 24%;
+    background-color: #4566ac;
+    color: white;
+}
+.login button:hover{
+    color: white;
+    font-weight: bold;
+    cursor:grab;
+}
+
+.login input:hover{
+    background-color: #4566ac;
+    color: white !important;
+
+}
+
+.categoria-titulo {
+  font-weight: bold;
+  color: #2c3e50;
+  border-left: 6px solid #00bcd4;
+  padding-left: 12px;
+}
+.categoria-titulo:hover{
+    font-size:x-large;
+    color: #4566ac;
+
+}
