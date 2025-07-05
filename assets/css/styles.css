@@ -53,43 +53,9 @@ ul li a:hover{
    
 }
 
-
-/*LOGIN / REGISTER*/
-.login{
-    background: #1D3557;
-    padding: 40px;
-    border-radius: 20px;
-    margin-top: 100px;
-    margin-bottom: 80px;
-    color: white;
-    font-weight: bold;
+/*LOGIN*/
+.form{
+    margin-top: 5% !important;
+    margin-bottom: 9% !important;
+  
 }
-/*Estilos de los input del login*/
-.login input{
-    width: 85%;
-    border-radius: 15px;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
-/*Estilos de los button del login*/
-.login button{
-    width: 50%;
-    border-radius: 15px;
-    margin-left: 24%;
-    background-color: #4566ac;
-    color: white;
-}
-/*Estilos de los hover en los button del login*/
-.login button:hover{
-    color: white;
-    font-weight: bold;
-    cursor:grab;
-}
-/*Estilos de los hover en los input del login*/
-.login input:hover{
-    background-color: #4566ac;
-    color: white !important;
-
-}
-
-
-

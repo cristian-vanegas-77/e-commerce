@@ -40,35 +40,39 @@
             </div>
     </nav>
 
-    <!--formulario-->
-    <div class="row">
-        <div class="col-md-4"></div>
+    <!--FORMULARIO INICIO DE SESION-->
+    <div class="row justify-content-center mt-5 form">
+        <div class="col-md-4">
+            <form action="#" class="p-4 shadow rounded bg-white">
+                <h4 class="mb-4 text-center">Iniciar sesión</h4>
 
-        <div class="col-md-4 login">
-            <form action="#">
-                <div>
-                    <label for="">Digite su correo</label>
-                    <br>
-                    <img src="../assets/img/icons/email.png" alt="">
-                    <input type="email">
+                <div class="mb-3">
+                    <label for="email" class="form-label">Correo electrónico</label>
+                    <div class="input-group">
+                        <span class="input-group-text">
+                            <img src="../assets/img/icons/email.png" alt="icono correo" width="20">
+                        </span>
+                        <input type="email" class="form-control" id="email" placeholder="usuario@ejemplo.com" required>
+                    </div>
                 </div>
-                <br>
-                <div>
-                    <label for="">Digite su contraseña</label>
-                    <br>
-                    <img src="../assets/img/icons/contrasena.png" alt="">
-                    <input type="password">
+
+                <div class="mb-3">
+                    <label for="password" class="form-label">Contraseña</label>
+                    <div class="input-group">
+                        <span class="input-group-text">
+                            <img src="../assets/img/icons/contrasena.png" alt="icono contraseña" width="20">
+                        </span>
+                        <input type="password" class="form-control" id="password" placeholder="********" required>
+                    </div>
                 </div>
-                <br>
-                <div>
-                    <button type="submit">Ingresar</button>
+
+                <div class="d-grid">
+                    <button type="submit" class="btn btn-success">Iniciar sesión</button>
                 </div>
-                <br>
             </form>
         </div>
-
-        <div class="col-md-4"></div>
     </div>
+
 
     <!--footer-->
     <div class="footer">
