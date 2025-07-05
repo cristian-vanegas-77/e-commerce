@@ -1,0 +1,44 @@
+
+/* Botón de ver carrito */
+#ver-carrito {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  background-color: #13894c;
+}
+
+/* Contenedor del carrito */
+#carrito {
+  display: none;
+  position: fixed;
+  top: 70px;
+  right: 20px;
+  width: 300px;
+  background: white;
+  border: 1px solid #ccc;
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  z-index: 999;
+  border-radius: 8px;
+}
+
+/* Lista de productos */
+#carrito-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Estilo para cada producto en el carrito */
+#carrito-items li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4%;
+}
+
+/* Botón de eliminar */
+#carrito-items button {
+  margin-left: 10px;
+}

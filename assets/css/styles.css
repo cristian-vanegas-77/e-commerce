@@ -2,18 +2,18 @@
 .barra{
     background-color: #1D3557;
 }
-
+/*Color de la letra en barra de busqueda*/
 .navbar .navbar-link {
     color: white !important;
 }
-
-a:hover{
+/*hover en barra de busqueda*/
+ul li a:hover{
     background-color: #4566ac !important;
     font-weight: bold;
     color: white !important;
     border-radius: 20px;
 }
-
+/*estilos de todas las cards*/
 .cards {
     margin-top: 20px;
     border: none;
@@ -21,11 +21,27 @@ a:hover{
     background-color: #F1FAEE;
     padding: 10px;
 }
-
+/*Hover de todas las cars*/
 .card-hover:hover{
     transform: scale(1.02);
     transition: transform 0.2s ease;
 }
+/*Estilos de los titulos de las categorias de los productos*/
+.categoria-titulo {
+  font-weight: bold;
+  color: #2c3e50;
+  border-left: 6px solid #00bcd4;
+  padding-left: 12px;
+}
+/*Hover de los titulo de la categorias de los productos*/
+.categoria-titulo:hover{
+    font-size:x-large;
+    color: #4566ac;
+
+}
+
+
+/*FOOTER*/
 .footer{
     background-color: #1D3557;
     height: 80px;
@@ -37,6 +53,7 @@ a:hover{
    
 }
 
+
 /*LOGIN / REGISTER*/
 .login{
     background: #1D3557;
@@ -47,11 +64,13 @@ a:hover{
     color: white;
     font-weight: bold;
 }
+/*Estilos de los input del login*/
 .login input{
     width: 85%;
     border-radius: 15px;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
+/*Estilos de los button del login*/
 .login button{
     width: 50%;
     border-radius: 15px;
@@ -59,26 +78,18 @@ a:hover{
     background-color: #4566ac;
     color: white;
 }
+/*Estilos de los hover en los button del login*/
 .login button:hover{
     color: white;
     font-weight: bold;
     cursor:grab;
 }
-
+/*Estilos de los hover en los input del login*/
 .login input:hover{
     background-color: #4566ac;
     color: white !important;
 
 }
 
-.categoria-titulo {
-  font-weight: bold;
-  color: #2c3e50;
-  border-left: 6px solid #00bcd4;
-  padding-left: 12px;
-}
-.categoria-titulo:hover{
-    font-size:x-large;
-    color: #4566ac;
 
-}
+
