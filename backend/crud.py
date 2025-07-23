@@ -98,21 +98,28 @@ def eliminar_cliente(id: int):
     conn.commit()
     conn.close()
 
-# ------------------- Funciones Clientes -------------------
-def crear_usuario(correo: str, contraseña: str):
+# ------------------- Funciones Usuarios -------------------
+def crear_usuario(usuario: UsuarioBase):
     conn = get_connection()
     cursor = conn.cursor()
     try:
         cursor.execute("""
-            INSERT INTO usuarios (correo, contraseña)
-            VALUES (?, ?)
-        """, (correo, hash_password(contraseña)))
+            INSERT INTO usuarios (correo, contraseña, nombre, telefono, rol)
+            VALUES (?, ?, ?, ?, ?)
+        """, (
+            usuario.correo,
+            hash_password(usuario.contraseña),
+            usuario.nombre,
+            usuario.telefono,
+            usuario.rol  # debe estar definido en el modelo UsuarioBase
+        ))
         conn.commit()
         return cursor.lastrowid
-    except Exception as e:
+    except Exception:
         raise Exception("No se pudo registrar el usuario. Verifica que el correo no esté en uso.")
     finally:
         conn.close()
+
 
 
 def login_usuario(usuario):

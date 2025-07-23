@@ -25,6 +25,7 @@ class UsuarioBase(BaseModel):
     contraseña: str
     nombre: str
     telefono: str | None = None
+    rol: str = "cliente"  # por defecto todos son clientes
 
 class UsuarioLogin(BaseModel):
     correo: str
@@ -34,4 +35,6 @@ class UsuarioLogin(BaseModel):
 class UsuarioRespuesta(BaseModel):
     id: int
     correo: str
+    nombre: str
+    rol: str
 

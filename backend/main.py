@@ -1,14 +1,24 @@
-# main.py
 from fastapi import FastAPI, HTTPException
 import crud
 from database import create_table, crear_tabla_clientes, crear_tabla_usuarios
 from schemas import Producto, ClienteBase, ClienteRespuesta, UsuarioBase, UsuarioRespuesta, UsuarioLogin
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI(title="API de Productos y Clientes - E-commerce")
+
+# Middleware CORS (habilitar conexión con el frontend)
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # Crear tablas al iniciar
 create_table()
 crear_tabla_clientes()
+crear_tabla_usuarios()
 
 # ===============================
 # SECCIÓN ADMIN: CRUD PRODUCTOS
@@ -63,22 +73,16 @@ def eliminar_cliente(id: int):
     crud.eliminar_cliente(id)
     return {"mensaje": "Cliente eliminado"}
 
-
-
-
-crear_tabla_usuarios()
-
+# ===============================
+# Registro y login
+# ===============================
 
 @app.post("/registro/")
 def registrar(usuario: UsuarioBase):
-    id_usuario = crud.crear_usuario(usuario.correo, usuario.contraseña)
-    
-    # Después de crear el usuario, también lo registramos como cliente
+    id_usuario = crud.crear_usuario(usuario)
     cliente = ClienteBase(nombre=usuario.nombre, correo=usuario.correo, telefono=usuario.telefono)
     crud.crear_cliente(cliente)
-
     return {"mensaje": "Usuario registrado correctamente", "usuario_id": id_usuario}
-
 
 @app.post("/login/", response_model=UsuarioRespuesta)
 def login(usuario: UsuarioLogin):

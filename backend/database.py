@@ -43,11 +43,14 @@ def crear_tabla_usuarios():
     conn = get_connection()
     cursor = conn.cursor()
     cursor.execute("""
-    CREATE TABLE IF NOT EXISTS usuarios (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        correo TEXT UNIQUE NOT NULL,
-        contraseña TEXT NOT NULL
-    );
+        CREATE TABLE IF NOT EXISTS usuarios (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            correo TEXT UNIQUE NOT NULL,
+            contraseña TEXT NOT NULL,
+            nombre TEXT NOT NULL,
+            telefono TEXT,
+            rol TEXT DEFAULT 'cliente'
+            );
     """)
     conn.commit()
     conn.close()
