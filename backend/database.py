@@ -38,7 +38,7 @@ def crear_tabla_clientes():
     conn.commit()
     conn.close()
 
-# Crear tabla de clientes si no existe 
+# Crear tabla de usuarios si no existe 
 def crear_tabla_usuarios():
     conn = get_connection()
     cursor = conn.cursor()

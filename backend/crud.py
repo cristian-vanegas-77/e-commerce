@@ -120,8 +120,6 @@ def crear_usuario(usuario: UsuarioBase):
     finally:
         conn.close()
 
-
-
 def login_usuario(usuario):
     conn = get_connection()
     cursor = conn.cursor()
