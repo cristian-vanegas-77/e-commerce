@@ -1,12 +1,19 @@
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Request
+from fastapi.responses import HTMLResponse
+from fastapi.staticfiles import StaticFiles
+from fastapi.templating import Jinja2Templates
+from fastapi.middleware.cors import CORSMiddleware
+import os
+
+# Módulos propios
 import crud
 from database import create_table, crear_tabla_clientes, crear_tabla_usuarios
 from schemas import Producto, ClienteBase, ClienteRespuesta, UsuarioBase, UsuarioRespuesta, UsuarioLogin
-from fastapi.middleware.cors import CORSMiddleware
 
+# Crear app FastAPI
 app = FastAPI(title="API de Productos y Clientes - E-commerce")
 
-# Middleware CORS (habilitar conexión con el frontend)
+# Middleware CORS
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -15,13 +22,20 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Crear tablas al iniciar
+# Crear las tablas en la base de datos
 create_table()
 crear_tabla_clientes()
 crear_tabla_usuarios()
 
+# Configurar archivos estáticos (assets: css, js, img)
+assets_path = os.path.join(os.path.dirname(__file__), "..", "assets")
+app.mount("/static", StaticFiles(directory=assets_path), name="static")
+
+# Configurar Jinja2 templates (html en carpeta view)
+templates = Jinja2Templates(directory=os.path.join(os.path.dirname(__file__), "..", "view"))
+
 # ===============================
-# SECCIÓN ADMIN: CRUD PRODUCTOS
+# CRUD PRODUCTOS
 # ===============================
 
 @app.post("/admin/productos/", response_model=int)
@@ -51,7 +65,7 @@ def eliminar_producto(id: int):
     return {"mensaje": "Producto eliminado"}
 
 # ===============================
-# SECCIÓN ADMIN: CRUD CLIENTES
+# CRUD CLIENTES
 # ===============================
 
 @app.post("/admin/clientes/", response_model=int)
@@ -74,7 +88,7 @@ def eliminar_cliente(id: int):
     return {"mensaje": "Cliente eliminado"}
 
 # ===============================
-# Registro y login
+# REGISTRO Y LOGIN
 # ===============================
 
 @app.post("/registro/")
@@ -90,3 +104,39 @@ def login(usuario: UsuarioLogin):
     if not user:
         raise HTTPException(status_code=401, detail="Credenciales incorrectas")
     return UsuarioRespuesta(**dict(user))
+
+# ===============================
+# RUTAS HTML CON JINJA2
+# ===============================
+
+@app.get("/", response_class=HTMLResponse)
+def index(request: Request):
+    return templates.TemplateResponse("index.html", {"request": request})
+
+@app.get("/iniciarSesion", response_class=HTMLResponse)
+def iniciar_sesion(request: Request):
+    return templates.TemplateResponse("iniciarSesion.html", {"request": request})
+
+@app.get("/registrarse", response_class=HTMLResponse)
+def registrarse(request: Request):
+    return templates.TemplateResponse("registrarse.html", {"request": request})
+
+@app.get("/productos", response_class=HTMLResponse)
+def productos(request: Request):
+    return templates.TemplateResponse("productos.html", {"request": request})
+
+@app.get("/cliente", response_class=HTMLResponse)
+def cliente(request: Request):
+    return templates.TemplateResponse("cliente.html", {"request": request})
+
+@app.get("/admin", response_class=HTMLResponse)
+def admin(request: Request):
+    return templates.TemplateResponse("admin.html", {"request": request})
+
+@app.get("/admin/productos/html", response_class=HTMLResponse)
+def admin_productos(request: Request):
+    return templates.TemplateResponse("adminProductos.html", {"request": request})
+
+@app.get("/admin/clientes/html", response_class=HTMLResponse)
+def admin_clientes(request: Request):
+    return templates.TemplateResponse("adminClientes.html", {"request": request})
