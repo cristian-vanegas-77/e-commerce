@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const correo = document.getElementById("email").value;
             const contrasena = document.getElementById("password").value;
-            const datos = { correo, contraseña };
+            const datos = { correo, contrasena };
 
             try {
                 const res = await fetch(`${window.location.origin}/login/`, {
@@ -22,9 +22,9 @@ document.addEventListener("DOMContentLoaded", () => {
                     localStorage.setItem("usuario", JSON.stringify(respuesta));
 
                     if (respuesta.rol === "admin") {
-                        window.location.href = "/view/admin.html";
+                        window.location.href = "/admin.html";
                     } else {
-                        window.location.href = "/view/cliente.html";
+                        window.location.href = "/cliente.html";
                     }
                 } else {
                     alert(respuesta.detail || "Credenciales incorrectas ❌");
@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
             localStorage.removeItem("usuario");
 
             if (!window.location.pathname.includes("iniciarSesion")) {
-                window.location.href = "/view/iniciarSesion.html";
+                window.location.href = "/iniciarSesion.html";
             }
             return;
         }
@@ -58,12 +58,12 @@ document.addEventListener("DOMContentLoaded", () => {
         if (btnCerrar) {
             btnCerrar.addEventListener("click", () => {
                 localStorage.removeItem("usuario");
-                window.location.href = "/view/iniciarSesion.html";
+                window.location.href = "/iniciarSesion.html";
             });
         }
     } catch (err) {
         console.error("Error al validar sesión:", err);
         localStorage.removeItem("usuario");
-        window.location.href = "/view/iniciarSesion.html";
+        window.location.href = "/iniciarSesion.html";
     }
 });
