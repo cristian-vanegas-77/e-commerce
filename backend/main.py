@@ -135,10 +135,10 @@ def cliente(request: Request):
 def admin(request: Request):
     return templates.TemplateResponse("admin.html", {"request": request})
 
-@app.get("/admin/productos/html", response_class=HTMLResponse)
+@app.get("/admin/vistaProductos", response_class=HTMLResponse)
 def admin_productos(request: Request):
     return templates.TemplateResponse("adminProductos.html", {"request": request})
 
-@app.get("/admin/clientes/html", response_class=HTMLResponse)
+@app.get("/admin/vistaClientes", response_class=HTMLResponse)
 def admin_clientes(request: Request):
     return templates.TemplateResponse("adminClientes.html", {"request": request})
