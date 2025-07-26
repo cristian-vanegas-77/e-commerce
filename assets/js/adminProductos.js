@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
     window.location.href = "/iniciarSesion"; // ruta de FastAPI
   });
 
-  const URL = "http://127.0.0.1:8000/admin/productos/";
+  const URL = "/admin/productos/"; // ✅ Ruta relativa compatible con Render
   const tabla = document.getElementById("tablaProductos");
   const form = document.getElementById("formularioProducto");
 

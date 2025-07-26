@@ -12,20 +12,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const correo = document.getElementById("email").value;
     const contraseña = document.getElementById("password").value;
 
-    const datos = {
-      nombre,
-      telefono,
-      correo,
-      contraseña
-    };
+    const datos = { nombre, telefono, correo, contraseña };
 
     try {
-      const res = await fetch("http://127.0.0.1:8000/registro/", {
+      const res = await fetch(`${window.location.origin}/registro/`, {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(datos)
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(datos),
       });
 
       const respuesta = await res.json();
@@ -33,13 +26,13 @@ document.addEventListener("DOMContentLoaded", () => {
       if (res.ok) {
         alert("Registro exitoso ✅");
         form.reset();
-        window.location.href = "/iniciarSesion"; // ← esta es la ruta real del login con FastAPI
+        window.location.href = "/view/iniciarSesion.html"; // Asegúrate que esta sea la ruta correcta
       } else {
         alert(respuesta.detail || "Error al registrar");
       }
     } catch (error) {
       alert("Error de conexión con el servidor");
-      console.error(error);
+      console.error("Error en el registro:", error);
     }
   });
 });

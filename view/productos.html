@@ -1,23 +1,25 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>E-commerce</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>e-comerce</title>
 
   <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="/static/css/styles.css" rel="stylesheet" />
-  <link href="/static/css/carrito.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/static/assets/css/styles.css" rel="stylesheet">
+  <link href="/static/assets/css/carrito.css" rel="stylesheet">
+
 </head>
 
 <body>
 
-  <!-- Barra de navegación -->
+  <!--barra de busqueda-->
   <nav class="navbar navbar-expand-lg navbar-dark barra">
     <div class="container-fluid">
-      <a class="navbar-brand" href="/"><strong>E-commerce</strong></a>
+
+      <a class="navbar-brand" href="/"><strong>E-comerce</strong></a>
 
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
         aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -26,77 +28,270 @@
 
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav">
-          <li class="nav-item"><a class="nav-link" href="/productos">PRODUCTOS</a></li>
-          <li class="nav-item"><a class="nav-link" href="/iniciarSesion">INICIAR SESIÓN</a></li>
-          <li class="nav-item"><a class="nav-link" href="/registrarse">REGISTRO</a></li>
+          <li class="nav-item">
+            <a class="nav-link" href="/productos">PRODUCTOS</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/iniciarSesion">INICIAR SESIÓN</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/registrarse">REGISTRO</a>
+          </li>
         </ul>
       </div>
-    </div>
   </nav>
 
-  <!-- Títulos y Cards -->
-  <div class="container mt-4">
+  <!--Titulo de la categoria-->
+  <br>
+  <h5 class="categoria-titulo"><strong>Ropa Masculina</strong></h5>
 
-    <!-- Ropa Masculina -->
-    <h5 class="categoria-titulo"><strong>Ropa Masculina</strong></h5>
-    <div class="row cards">
-      <div class="col-md-3">
-        <div class="card card-hover" style="width: 18rem;">
-          <img class="card-img-top" src="/static/img/productos_categorias/ropa_mas_1.jpg" />
-          <div class="card-body">
-            <h5 class="card-title">Chaqueta Explorer</h5>
-            <p class="card-text"><span class="text-warning">★★★★★</span><br><strong>$79.900</strong></p>
-            <button class="btn btn-success agregar-carrito" data-nombre="Chaqueta Explorer" data-precio="79.900">Agregar al carrito</button>
-          </div>
+  <!--Cards fila 1-->
+  <div class="row cards">
+
+    <div class="col-md-3">
+      <div class="card card-hover" style="width: 18rem;">
+        <img class="card-img-top" src="/static/assets/img/productos_categorias/ropa_mas_1.jpg">
+        <div class="card-body">
+          <h5 class="card-title">Chaqueta Explorer</h5>
+          <p class="card-text">
+            <span class="text-warning">★★★★★</span><br>
+            <strong>$79.900</strong>
+          </p>
+          <button class="btn btn-success agregar-carrito" data-nombre="Chaqueta Explorer" data-precio="79.900">
+            Agregar al carrito
+          </button>
         </div>
       </div>
-      <!-- (Agrega los demás productos igual cambiando solo la imagen, nombre y precio) -->
     </div>
 
-    <!-- Ropa Femenina -->
-    <h5 class="categoria-titulo mt-5"><strong>Ropa Femenina</strong></h5>
-    <div class="row cards">
-      <!-- (Cards de productos femeninos aquí con imágenes desde /static/img/...) -->
+    <div class="col-md-3">
+      <div class="card card-hover" style="width: 18rem;">
+        <img class="card-img-top" src="/static/assets/img/productos_categorias/ropa_mas_2.jpg">
+        <div class="card-body">
+          <h5 class="card-title">Jeans Urbanos</h5>
+          <p class="card-text">
+            <span class="text-warning">★★★★★</span><br>
+            <strong>$59.900</strong>
+          </p>
+          <button class="btn btn-success agregar-carrito" data-nombre="Jeans Urbanos" data-precio="59.900">
+            Agregar al carrito
+          </button>
+        </div>
+      </div>
     </div>
 
-    <!-- Tecnología -->
-    <h5 class="categoria-titulo mt-5"><strong>Tecnología</strong></h5>
-    <div class="row cards">
-      <!-- (Cards de tecnología con imágenes desde /static/img/...) -->
+    <div class="col-md-3">
+      <div class="card card-hover" style="width: 18rem;">
+        <img class="card-img-top" src="/static/assets/img/productos_categorias/ropa_mas_3.jpg">
+        <div class="card-body">
+          <h5 class="card-title">Zapatos Oxford</h5>
+          <p class="card-text">
+            <span class="text-warning">★★★★★</span><br>
+            <strong>$109.900</strong>
+          </p>
+          <button class="btn btn-success agregar-carrito" data-nombre="Zapatos Oxford" data-precio="109.900">
+            Agregar al carrito
+          </button>
+        </div>
+      </div>
     </div>
+
+    <div class="col-md-3">
+      <div class="card card-hover" style="width: 18rem;">
+        <img class="card-img-top" src="/static/assets/img/productos_categorias/ropa_mas_4.jpg">
+        <div class="card-body">
+          <h5 class="card-title">Camisa Polo Pro</h5>
+          <p class="card-text">
+            <span class="text-warning">★★★★★</span><br>
+            <strong>$39.900</strong>
+          </p>
+          <button class="btn btn-success agregar-carrito" data-nombre="Camisa Polo Pro" data-precio="39.900">
+            Agregar al carrito
+          </button>
+        </div>
+      </div>
+    </div>
+
   </div>
 
-  <!-- Footer -->
-  <div class="footer text-center mt-5 p-3">
-    Para mayor información contáctanos en nuestras redes sociales:
-    <p class="mt-2">
-      <a href="https://www.instagram.com/" target="_blank">
-        <img src="/static/img/icons/instagram.png" alt="Instagram" />
+  <br>
+  <h5 class="categoria-titulo"><strong>Ropa Femenina</strong></h5>
+
+  <div class="row cards">
+
+    <div class="col-md-3">
+      <div class="card card-hover" style="width: 18rem;">
+        <img class="card-img-top" src="/static/assets/img/productos_categorias/ropa_fem_1.jpg">
+        <div class="card-body">
+          <h5 class="card-title">Vestido Glam</h5>
+          <p class="card-text">
+            <span class="text-warning">★★★★★</span><br>
+            <strong>$89.900</strong>
+          </p>
+          <button class="btn btn-success agregar-carrito" data-nombre="Vestido Glam" data-precio="89.900">
+            Agregar al carrito
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="col-md-3">
+      <div class="card card-hover" style="width: 18rem;">
+        <img class="card-img-top" src="/static/assets/img/productos_categorias/ropa_fem_2.jpg">
+        <div class="card-body">
+          <h5 class="card-title">Tacones Elegance</h5>
+          <p class="card-text">
+            <span class="text-warning">★★★★★</span><br>
+            <strong>$59.900</strong>
+          </p>
+          <button class="btn btn-success agregar-carrito" data-nombre="Tacones Elegance" data-precio="59.900">
+            Agregar al carrito
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="card card-hover" style="width: 18rem;">
+        <img class="card-img-top" src="/static/assets/img/productos_categorias/ropa_fem_3.jpg">
+        <div class="card-body">
+          <h5 class="card-title">Crop Top Chill</h5>
+          <p class="card-text">
+            <span class="text-warning">★★★★★</span><br>
+            <strong>$29.900</strong>
+          </p>
+          <button class="btn btn-success agregar-carrito" data-nombre="Crop Top Chill" data-precio="29.900">
+            Agregar al carrito
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="col-md-3">
+      <div class="card card-hover" style="width: 18rem;">
+        <img class="card-img-top" src="/static/assets/img/productos_categorias/ropa_fem_4.jpg">
+        <div class="card-body">
+          <h5 class="card-title">Falda Boho</h5>
+          <p class="card-text">
+            <span class="text-warning">★★★★★</span><br>
+            <strong>$39.900</strong>
+          </p>
+          <button class="btn btn-success agregar-carrito" data-nombre="Falda Boho" data-precio="39.900">
+            Agregar al carrito
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <br>
+  <h5 class="categoria-titulo"><strong>Tecnología</strong></h5>
+
+  <div class="row cards">
+
+    <div class="col-md-3">
+      <div class="card card-hover" style="width: 18rem;">
+        <img class="card-img-top" src="/static/assets/img/productos_categorias/tecnologia_1.jpg">
+        <div class="card-body">
+          <h5 class="card-title">Cámara ProShot</h5>
+          <p class="card-text">
+            <span class="text-warning">★★★★★</span><br>
+            <strong>$119.900</strong>
+          </p>
+          <button class="btn btn-success agregar-carrito" data-nombre="Cámara ProShot" data-precio="119.900">
+            Agregar al carrito
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="card card-hover" style="width: 18rem;">
+        <img class="card-img-top" src="/static/assets/img/productos_categorias/tecnologia_2.jpg">
+        <div class="card-body">
+          <h5 class="card-title">Audífonos BeatMax</h5>
+          <p class="card-text">
+            <span class="text-warning">★★★★★</span><br>
+            <strong>$159.900</strong>
+          </p>
+          <button class="btn btn-success agregar-carrito" data-nombre="Audífonos BeatMax" data-precio="159.900">
+            Agregar al carrito
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="card card-hover" style="width: 18rem;">
+        <img class="card-img-top" src="/static/assets/img/productos_categorias/tecnologia_3.jpg">
+        <div class="card-body">
+          <h5 class="card-title">Cargador Rápido</h5>
+          <p class="card-text">
+            <span class="text-warning">★★★★★</span><br>
+            <strong>$79.900</strong>
+          </p>
+          <button class="btn btn-success agregar-carrito" data-nombre="Cargador Rápido" data-precio="79.900">
+            Agregar al carrito
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="card card-hover" style="width: 18rem;">
+        <img class="card-img-top" src="/static/assets/img/productos_categorias/tecnologia_4.jpg">
+        <div class="card-body">
+          <h5 class="card-title">PC Gamer Core</h5>
+          <p class="card-text">
+            <span class="text-warning">★★★★★</span><br>
+            <strong>$1.059.900</strong>
+          </p>
+          <button class="btn btn-success agregar-carrito" data-nombre="PC Gamer Core" data-precio="1.059.900">
+            Agregar al carrito
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!--footer-->
+  <div class="footer">
+    Para mayor información contáctanos en nuestras redes sociales :
+    <p>
+      <a href="https://www.instagram.com/">
+        <img src="/static/assets/img/icons/instagram.png">
       </a>
-      <a href="https://x.com/" target="_blank">
-        <img src="/static/img/icons/x.png" alt="X" />
+
+      <a href="https://x.com/">
+        <img src="/static/assets/img/icons/x.png">
       </a>
-      <a href="https://www.tiktok.com/es/" target="_blank">
-        <img src="/static/img/icons/tik-tok.png" alt="TikTok" />
+
+      <a href="https://www.tiktok.com/es/">
+        <img src="/static/assets/img/icons/tik-tok.png">
       </a>
     </p>
   </div>
 
   <!-- Botón del carrito -->
-  <button id="ver-carrito" class="btn btn-primary" style="position: fixed; bottom: 20px; right: 20px; z-index: 999;">
+  <button id="ver-carrito" class="btn btn-primary">
     🛒 Ver carrito
   </button>
 
   <!-- Contenedor del carrito -->
-  <div id="carrito" class="container mt-3">
+  <div id="carrito">
     <h5>Carrito de compras</h5>
     <ul id="carrito-items"></ul>
   </div>
 
-  <!-- Scripts -->
+  <!-- Bootstrap 5 JS y scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="/static/js/scripts.js"></script>
-  <script src="/static/js/carrito.js"></script>
+  <script src="/static/assets/js/scripts.js"></script>
+  <script src="/static/assets/js/carrito.js"></script>
+
 </body>
 
 </html>

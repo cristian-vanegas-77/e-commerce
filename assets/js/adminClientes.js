@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!usuario || usuario.rol !== "admin") {
         alert("Acceso no autorizado 🚫");
         localStorage.removeItem("usuario");
-        window.location.href = "/iniciarSesion"; // Ruta FastAPI
+        window.location.href = "/iniciarSesion"; // Ruta servida por FastAPI
         return;
     }
 
@@ -19,10 +19,10 @@ document.addEventListener("DOMContentLoaded", () => {
     // Cerrar sesión
     cerrarSesion?.addEventListener("click", () => {
         localStorage.removeItem("usuario");
-        window.location.href = "/iniciarSesion"; // Ruta FastAPI
+        window.location.href = "/iniciarSesion"; // Ruta servida por FastAPI
     });
 
-    const URL = "http://127.0.0.1:8000/admin/clientes/";
+    const URL = "/admin/clientes/"; // Ruta relativa para que funcione en producción (Render)
     const tabla = document.getElementById("tablaClientes");
     const form = document.getElementById("formularioCliente");
 

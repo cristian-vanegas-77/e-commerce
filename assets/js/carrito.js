@@ -1,6 +1,7 @@
 // Mostrar u ocultar el carrito
-document.getElementById("ver-carrito").addEventListener("click", () => {
+document.getElementById("ver-carrito")?.addEventListener("click", () => {
   const carritoDiv = document.getElementById("carrito");
+  if (!carritoDiv) return;
   carritoDiv.style.display = carritoDiv.style.display === "none" ? "block" : "none";
   mostrarCarrito();
 });
@@ -11,7 +12,7 @@ document.querySelectorAll(".agregar-carrito").forEach((boton) => {
     const tarjeta = boton.closest(".card");
     const nombre = tarjeta.querySelector("h5, h4, .nombre")?.textContent?.trim() || "Producto";
     const precioTexto = tarjeta.querySelector(".precio, .card-text")?.textContent || "$0";
-    const precio = parseInt(precioTexto.replace(/[^0-9]/g, "")) || 0;
+    const precio = parseInt(precioTexto.replace(/[^\d]/g, ""), 10) || 0;
 
     const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
     carrito.push({ nombre, precio });
@@ -24,14 +25,14 @@ document.querySelectorAll(".agregar-carrito").forEach((boton) => {
 function mostrarCarrito() {
   const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
   const contenedor = document.getElementById("carrito-items");
+  if (!contenedor) return;
+
   contenedor.innerHTML = "";
 
   carrito.forEach((item, index) => {
     const li = document.createElement("li");
     li.className = "list-group-item d-flex justify-content-between align-items-center";
-    li.innerHTML = `
-      <span>${item.nombre} - $${item.precio}</span>
-    `;
+    li.innerHTML = `<span>${item.nombre} - $${item.precio}</span>`;
 
     const btnEliminar = document.createElement("button");
     btnEliminar.textContent = "Eliminar";
@@ -46,7 +47,7 @@ function mostrarCarrito() {
     contenedor.appendChild(li);
   });
 
-  // Mostrar total (opcional)
+  // Mostrar total
   const total = carrito.reduce((sum, p) => sum + p.precio, 0);
   const totalElemento = document.getElementById("total-carrito");
   if (totalElemento) {
@@ -54,5 +55,5 @@ function mostrarCarrito() {
   }
 }
 
-// Mostrar carrito al cargar
+// Mostrar carrito al cargar la página
 mostrarCarrito();
