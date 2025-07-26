@@ -1,4 +1,6 @@
 fastapi
-uvicorn
+uvicorn[standard]
+pydantic[email]
 jinja2
 python-multipart
+aiofiles
