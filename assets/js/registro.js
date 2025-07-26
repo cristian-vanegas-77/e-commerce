@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (res.ok) {
         alert("Registro exitoso ✅");
         form.reset();
-        window.location.href = "/iniciarSesion.html"; // Asegúrate que esta sea la ruta correcta
+        window.location.href = "/iniciarSesion"; // Asegúrate que esta sea la ruta correcta
       } else {
         alert(respuesta.detail || "Error al registrar");
       }

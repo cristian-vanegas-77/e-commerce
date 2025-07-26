@@ -22,9 +22,9 @@ document.addEventListener("DOMContentLoaded", () => {
                     localStorage.setItem("usuario", JSON.stringify(respuesta));
 
                     if (respuesta.rol === "admin") {
-                        window.location.href = "/admin.html";
+                        window.location.href = "/admin";
                     } else {
-                        window.location.href = "/cliente.html";
+                        window.location.href = "/cliente";
                     }
                 } else {
                     alert(respuesta.detail || "Credenciales incorrectas ❌");
@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
             localStorage.removeItem("usuario");
 
             if (!window.location.pathname.includes("iniciarSesion")) {
-                window.location.href = "/iniciarSesion.html";
+                window.location.href = "/iniciarSesion";
             }
             return;
         }
@@ -58,12 +58,12 @@ document.addEventListener("DOMContentLoaded", () => {
         if (btnCerrar) {
             btnCerrar.addEventListener("click", () => {
                 localStorage.removeItem("usuario");
-                window.location.href = "/iniciarSesion.html";
+                window.location.href = "/iniciarSesion";
             });
         }
     } catch (err) {
         console.error("Error al validar sesión:", err);
         localStorage.removeItem("usuario");
-        window.location.href = "/iniciarSesion.html";
+        window.location.href = "/iniciarSesion";
     }
 });
