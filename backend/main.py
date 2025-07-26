@@ -27,12 +27,14 @@ create_table()
 crear_tabla_clientes()
 crear_tabla_usuarios()
 
-# Configurar archivos estáticos (assets: css, js, img)
-assets_path = os.path.join(os.path.dirname(__file__), "..", "assets")
-app.mount("/static", StaticFiles(directory=assets_path), name="static")
+# === Ajuste importante: rutas absolutas relativas al archivo ===
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-# Configurar Jinja2 templates (html en carpeta view)
-templates = Jinja2Templates(directory=os.path.join(os.path.dirname(__file__), "..", "view"))
+# Montar carpeta de archivos estáticos (css, js, img)
+app.mount("/static", StaticFiles(directory=os.path.join(BASE_DIR, "assets")), name="static")
+
+# Configurar plantillas Jinja2 (html)
+templates = Jinja2Templates(directory=os.path.join(BASE_DIR, "view"))
 
 # ===============================
 # CRUD PRODUCTOS
