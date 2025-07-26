@@ -10,9 +10,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const nombre = document.getElementById("nombre").value;
     const telefono = document.getElementById("telefono").value;
     const correo = document.getElementById("email").value;
-    const contraseña = document.getElementById("password").value;
+    const contrasena = document.getElementById("password").value;
 
-    const datos = { nombre, telefono, correo, contraseña };
+    const datos = { nombre, telefono, correo, contrasena };
 
     try {
       const res = await fetch(`${window.location.origin}/registro/`, {

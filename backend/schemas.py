@@ -22,14 +22,14 @@ class ClienteRespuesta(ClienteBase):
 # Esquema base de usuarios (para crear o actualizar)
 class UsuarioBase(BaseModel):
     correo: str
-    contraseña: str
+    contrasena: str
     nombre: str
     telefono: str | None = None
     rol: str = "cliente"  # por defecto todos son clientes
 
 class UsuarioLogin(BaseModel):
     correo: str
-    contraseña: str
+    contrasena: str
 
 # Esquema para mostrar usuarios
 class UsuarioRespuesta(BaseModel):

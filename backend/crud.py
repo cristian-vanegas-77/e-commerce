@@ -108,7 +108,7 @@ def crear_usuario(usuario: UsuarioBase):
             VALUES (?, ?, ?, ?, ?)
         """, (
             usuario.correo,
-            hash_password(usuario.contraseña),
+            hash_password(usuario.contrasena),
             usuario.nombre,
             usuario.telefono,
             usuario.rol  # debe estar definido en el modelo UsuarioBase
@@ -123,7 +123,7 @@ def crear_usuario(usuario: UsuarioBase):
 def login_usuario(usuario):
     conn = get_connection()
     cursor = conn.cursor()
-    contraseña_hash = hashlib.sha256(usuario.contraseña.encode()).hexdigest()
+    contraseña_hash = hashlib.sha256(usuario.contrasena.encode()).hexdigest()
     cursor.execute("""
         SELECT * FROM usuarios WHERE correo = ? AND contraseña = ?
     """, (usuario.correo, contraseña_hash))
